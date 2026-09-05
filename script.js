@@ -10,13 +10,18 @@ function addTask() {
     }
 
     const taskItem = document.createElement("li");
+    const taskName = document.createElement("span");
+    const deleteButton = document.createElement("button");
 
-    taskItem.textContent = taskText;
+    taskName.textContent = taskText;
+    deleteButton.textContent = "Delete";
 
-    taskItem.addEventListener("click", function () {
+    deleteButton.onclick = function () {
         taskItem.remove();
-    });
+    };
 
+    taskItem.appendChild(taskName);
+    taskItem.appendChild(deleteButton);
     taskList.appendChild(taskItem);
 
     taskInput.value = "";
