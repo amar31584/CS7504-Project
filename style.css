@@ -42,4 +42,9 @@ li {
     padding: 10px;
     margin-bottom: 8px;
     background-color: #eeeeee;
+
+    .completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
 }
