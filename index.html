@@ -10,14 +10,87 @@
 <body>
 
     <div class="container">
-        <h1>Student Task Manager</h1>
 
+        <h1>Student Task Manager</h1>
+        <p class="subtitle">Manage your study tasks easily</p>
+
+        <!-- Add Task Form -->
         <div class="task-form">
-            <input type="text" id="taskInput" placeholder="Enter a task">
+
+            <input
+                type="text"
+                id="taskInput"
+                placeholder="Enter a task"
+            >
+
+            <select id="priorityInput">
+                <option value="Low">Low Priority</option>
+                <option value="Medium">Medium Priority</option>
+                <option value="High">High Priority</option>
+            </select>
+
+            <input
+                type="date"
+                id="dueDateInput"
+            >
+
             <button onclick="addTask()">Add Task</button>
+
         </div>
 
-        <ul id="taskList"></ul>
+        <!-- Task Information -->
+        <div class="task-info">
+
+            <p>
+                Total Tasks:
+                <span id="totalTasks">0</span>
+            </p>
+
+            <p>
+                Completed:
+                <span id="completedTasks">0</span>
+            </p>
+
+            <p>
+                Remaining:
+                <span id="remainingTasks">0</span>
+            </p>
+
+        </div>
+
+        <!-- Task Filters -->
+        <div class="filter-buttons">
+
+            <button onclick="filterTasks('all')">
+                All
+            </button>
+
+            <button onclick="filterTasks('active')">
+                Active
+            </button>
+
+            <button onclick="filterTasks('completed')">
+                Completed
+            </button>
+
+        </div>
+
+        <!-- Task List -->
+        <ul id="taskList">
+        </ul>
+
+        <!-- Clear Tasks -->
+        <div class="clear-section">
+
+            <button
+                id="clearButton"
+                onclick="clearAllTasks()"
+            >
+                Clear All Tasks
+            </button>
+
+        </div>
+
     </div>
 
     <script src="script.js"></script>
